@@ -7,9 +7,18 @@
 #include "libs/ZeroGUI/ZeroGUI.h";
 #include "libs/ZeroGUI/ZeroInput.h"
 
-using namespace CG;
+#define KeyPressed( k ) ( GetAsyncKeyState(k) & 0x8000 )
+#define Nullcheck(x) if (x == NULL || x == nullptr || !x) {return;}
+#define NullcheckC(x) if (x == NULL || x == nullptr || !x) {continue;}
 
-inline int PostRenderIndex = 0;
+using namespace CG;
+int MenuKey = 45;
+int PostRenderIndex = 98;
+
+void Cheats() {
+  // Cheats Here (Drawing related stuff goes in 'void Hook')   
+}
+
 typedef void(__thiscall* post_render_type)(UGameViewportClient*, UCanvas*);
 post_render_type original_post_render = nullptr;
 void Hook(UGameViewportClient* vp_client, UCanvas* canvas)
