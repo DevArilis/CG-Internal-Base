@@ -16,8 +16,7 @@
 
 #define KeyPressed( k ) ( GetAsyncKeyState(k) & 0x8000 )
 #define Nullcheck(x) if (x == NULL || x == nullptr || !x) {return;}
-<<<<<<< HEAD
-#define NullcheckC(x) if (x == NULL || x == nullptr || !x) {continue;}s
+#define NullcheckC(x) if (x == NULL || x == nullptr || !x) {continue;}
 
 using namespace CG;
 int MenuKey = 45; // V Key index. Checkout https://boostrobotics.eu/windows-key-codes/ for all the key indexes!
@@ -76,16 +75,6 @@ void Cheats() {
         auto PlayerController = LocalPlayer->PlayerController;
         Nullcheck(PlayerController);
     }
-=======
-#define NullcheckC(x) if (x == NULL || x == nullptr || !x) {continue;}
-
-using namespace CG;
-int MenuKey = 45;
-int PostRenderIndex = 98;
-
-void Cheats() {
-  // Cheats Here (Drawing related stuff goes in 'void Hook')   
->>>>>>> 3389fcf688d2d149543bfdf5330877cc25a9177d
 }
 
 typedef void(__thiscall* post_render_type)(UGameViewportClient*, UCanvas*);
